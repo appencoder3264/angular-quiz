@@ -65,7 +65,7 @@ export class HttpMockInterceptor implements HttpInterceptor {
             console.log('mock: going to:', url, 'body', body, 'param', params.toString());
             switch (true) {
                 case url.endsWith('auth/login') && method === 'POST':
-                    return ok({ userName: 'alex', token: 'debug_token' });
+                    return ok({ userName: 'admin', token: 'debug_token' });
                 case url.endsWith('assignment') && method === 'GET':
                     const items = ASSGN_ITEMS[params.get('id')];
                     console.log(items);

@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { SetQuestions } from '../../store/quiz.actions';
 import { QuestionItem } from 'src/app/store/quiz.models';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,10 @@ export class DashboardComponent implements OnInit {
     private router: Router,
     private store: Store<AppState>) { }
   ngOnInit(): void {
+  }
+
+  isProd() {
+    return environment.production;
   }
 
   start(): void {

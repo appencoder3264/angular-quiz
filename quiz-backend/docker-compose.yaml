@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+
+  test-academy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: test-academy
+    restart: always
+    container_name: test-academy
+    ports:
+      - "8080:8080"

@@ -24,6 +24,8 @@ export class HttpOAuth2Interceptor implements HttpInterceptor {
                 if (e.status === 401) {
                     this.authenticationService.logout();
                     this.router.navigate(['/']);
+                } else {
+                    return throwError(e);
                 }
                 return of(e);
             }))

@@ -8,7 +8,8 @@
             </mat-card-header>
             <mat-card-content>
                 <p>
-                   Please enter the code to start answering the questions. <br>For example: XXSSDS7667676GD
+                   Please enter the code to start answering the questions. <br>
+                   <span *ngIf="!isProd()">For example: XXSSDS7667676GD</span>
                 </p>
             </mat-card-content>
             <mat-error *ngIf="isError">Could not load the questions, please check your code amd try again.</mat-error>
@@ -19,7 +20,7 @@
                     <mat-label>Enter your testing code</mat-label>
                     <input matInput required [(ngModel)]="code" >
                 </mat-form-field>
- 
+                <div fxFlex="20px"></div>
                 <mat-card-actions *ngIf="!loading">
                     <button mat-button (click)="start()">Start Test!</button>
                 </mat-card-actions>
