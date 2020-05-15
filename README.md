@@ -8,6 +8,8 @@ Default admin account is `admin/admin`.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9, material design and redux (ngrx).
 
 ![alt text](https://raw.githubusercontent.com/appencoder3264/angular-quiz/master/screens/sc1.png)
+![alt text](https://raw.githubusercontent.com/appencoder3264/angular-quiz/master/screens/sc2.png)
+![alt text](https://raw.githubusercontent.com/appencoder3264/angular-quiz/master/screens/sc3.png)
 
 ## Development server
 
