@@ -1,0 +1,26 @@
+<div [ngClass]="{'main-div' : !code}">
+    <div fxLayout="col" fxLayoutAlign="center center">
+        <mat-card class="example-card" class="results">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Test Results</mat-card-title>
+                <mat-card-subtitle>{{ (results$ | async)?.name }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-error  *ngIf="errorMessage"> {{errorMessage}} </mat-error>
+                <div *ngIf="!loaded">
+                    <h1>Loading....</h1>
+                    <mat-spinner></mat-spinner>
+                </div>
+                <div *ngIf="results$ | async">
+                    <h1>Results</h1>
+                    <h3>Your score is {{ pct( (results$ | async)?.results) }}% </h3>
+                    <ol>
+                        <li *ngFor="let r of (results$ | async)?.results">{{r === 1 ? 'correct':'incorrect'}}</li>
+                    </ol>
+                </div>
+                <a [routerLink]="['/']">Home</a>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

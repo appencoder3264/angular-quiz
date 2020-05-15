@@ -1,0 +1,32 @@
+<div class="container main-div">
+    <div fxLayout="col" fxLayoutAlign="center center">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Testing Academy</mat-card-title>
+                <mat-card-subtitle>Quiz</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>
+                   Please enter the code to start answering the questions. <br>For example: XXSSDS7667676GD
+                </p>
+            </mat-card-content>
+            <mat-error *ngIf="isError">Could not load the questions, please check your code amd try again.</mat-error>
+
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <mat-spinner *ngIf="loading"></mat-spinner>
+                <mat-form-field appearance="fill" *ngIf="!loading">
+                    <mat-label>Enter your testing code</mat-label>
+                    <input matInput required [(ngModel)]="code" >
+                </mat-form-field>
+ 
+                <mat-card-actions *ngIf="!loading">
+                    <button mat-button (click)="start()">Start Test!</button>
+                </mat-card-actions>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="left center" class="admin-link">
+                <a [routerLink]="['/admin']">admin</a>
+            </div>
+        </mat-card>
+    </div>
+</div>

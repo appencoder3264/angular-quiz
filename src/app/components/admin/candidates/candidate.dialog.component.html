@@ -1,0 +1,33 @@
+<div fxLayout="column">
+    <mat-dialog-content [formGroup]="candidateForm">
+        <div fxLayout="column">
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input cdkFocusInitial matInput required formControlName="firstName">
+                <mat-error *ngIf="submitted && fval.firstName.errors">First name required</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input cdkFocusInitial matInput required formControlName="lastName">
+                <mat-error *ngIf="submitted && fval.lastName.errors">Last name required</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input cdkFocusInitial matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Assigment</mat-label>
+                <select matNativeControl required formControlName="assigmnetId">
+                  <option *ngFor="let it of data.asmtKeyValue | keyvalue" [value]="it.key">
+                    {{it.value}}
+                  </option>
+                </select>
+                <mat-error *ngIf="submitted && fval.assigmnetId.errors">Assigment name required</mat-error>
+              </mat-form-field>
+            <div mat-dialog-actions>
+                <button mat-button (click)="onFormSubmit()">Save</button>
+                <button mat-button (click)="onNoClick()">Close</button>
+            </div>
+        </div>
+    </mat-dialog-content>
+</div>

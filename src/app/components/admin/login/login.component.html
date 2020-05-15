@@ -1,0 +1,30 @@
+<div class="container main-div">
+    <div fxLayout="row" fxLayoutAlign="center center">
+
+        <mat-card fxFlex="400px" >
+            <mat-card-header>
+                <mat-icon mat-card-avatar>account_circle</mat-icon>
+                <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+                <mat-card-content>
+                <div fxLayout="column">
+                    <mat-form-field >
+                        <input matInput formControlName="username" placeholder="username">
+                        <mat-error *ngIf="submitted && fval.username.errors">name required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field >
+                        <input type ="password" matInput formControlName="password" placeholder="password">
+                        <mat-error *ngIf="submitted && fval.password.errors">pasword required</mat-error>
+                    </mat-form-field>
+                </div>
+                </mat-card-content>
+                <button mat-stroked-button color="accent" class="btn-block">Submit</button>
+                <mat-error *ngIf="loginError">Login is incorrect</mat-error>
+            </form>
+        </mat-card>
+
+    </div>
+</div>

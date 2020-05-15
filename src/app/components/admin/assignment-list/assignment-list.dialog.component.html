@@ -1,0 +1,15 @@
+<div fxLayout="column">
+    <mat-dialog-content [formGroup]="titleForm">
+        <div fxLayout="column">
+            <mat-form-field appearance="fill">
+                <mat-label>Assigment Name</mat-label>
+                <input cdkFocusInitial matInput required formControlName="title">
+                <mat-error *ngIf="submitted && fval.title.errors">Name required</mat-error>
+            </mat-form-field>
+            <div mat-dialog-actions>
+                <button mat-button (click)="onFormSubmit()">Save</button>
+                <button mat-button (click)="onNoClick()">Close</button>
+            </div>
+        </div>
+    </mat-dialog-content>
+</div>

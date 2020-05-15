@@ -1,0 +1,32 @@
+<div class="main-div">
+    <div fxFlex="70%">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{title}}</mat-card-title>
+                <mat-card-subtitle>Please answer the following question</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div fxLayout="column" fxLayoutGap="20px" *ngIf="currentItem">
+                    <div class="question">{{currentItem.question}}</div>
+                    <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedValue">
+                        <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px">
+                            <mat-radio-button *ngFor="let c of currentItem.choices;let i = index" [value]="i">
+                                <span class="wrap-mat-radio-label">{{c.value}}</span>
+                            </mat-radio-button>
+                        </div>
+                    </mat-radio-group>
+                    <div fxLayout="row" fxLayoutAlign="center center" >
+                        <mat-card-actions>
+                            <button mat-raised-button (click)="previous()" class = "next" *ngIf="!isFirst()">Previous</button>
+                            <button mat-raised-button (click)="next()" class = "next" *ngIf="isSelected() && !isLast()">Next</button>
+                            <button mat-raised-button (click)="next()" class = "next" *ngIf="isSelected() && isLast()">Finish!</button>
+                        </mat-card-actions>
+                        <p *ngIf="!isSelected()" class="notif" >Please select an answer to continue</p>
+                    </div>
+                    <mat-error *ngIf="errorMessage"> Error while submittion: {{errorMessage}}</mat-error>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container cyan">
+  <mat-toolbar color="accent" *ngIf="userName">
+    <a mat-button [routerLink]='[""]'>Main</a>
+    <a mat-button [routerLink]='["candidates"]' [routerLinkActive]="['is-active']">Candidates</a>
+    <a mat-button [routerLink]='["assignment-list"]' [routerLinkActive]="['is-active']">Assignments</a>
+    <span style="flex: 1 1 auto;"></span>
+    <div>
+        <button mat-icon-button matTooltip="MY Profile" [matMenuTriggerFor]="accountMenu">
+            <mat-icon>account_circle</mat-icon>
+            {{ userName }}
+        </button>
+        <div fxFlex="5px"></div>
+        <mat-menu #accountMenu [overlapTrigger]="false" yPosition="below">
+            <a mat-menu-item [routerLink] = '"change-password"'>
+                <mat-icon >account_circle</mat-icon>Change Password
+            </a>
+            <button mat-menu-item (click) = "logout()">
+                <mat-icon >exit_to_app</mat-icon>Logout
+            </button>
+        </mat-menu>
+    </div>
+    <div fxFlex="25px"></div>
+</mat-toolbar>
+  <router-outlet></router-outlet>
+</div>
+
