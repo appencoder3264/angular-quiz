@@ -2,6 +2,7 @@
 
 This is a multichoice questions and answers. You can create quizzes and distribute it to the people via a code, the person has to enter.
 
+[mocked demo](https://appencoder3264.github.io/angular-quiz)
 Default admin account is admin/admin.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9, material design and redux (ngrx).
@@ -11,11 +12,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Stage
-spring boot api on http://localhost:8080
+spring boot api on `http://localhost:8080`
 ng serve --configuration=stage
 
 ## Prod
 ng build --prod
+
+# Demo
+`ng build --prod ----output-path docs --base-href "/angular-quiz/"`
 
 ## Code scaffolding
 
