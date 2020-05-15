@@ -29,7 +29,7 @@ Stage will be using the backand on `http://localhost:8080`
 
 if you dont wnat to use docker you can run it directly from the command line `java -jar  quiz-backend/build/libs/quiz-backend-0.0.1-SNAPSHOT.jar`
 
-# GitHub Demo
+## GitHub Demo
 `ng build --prod ----output-path docs --base-href "/angular-quiz/"`
 
 ## Code scaffolding
