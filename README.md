@@ -2,8 +2,8 @@
 
 This is a multichoice questions and answers. You can create quizzes and distribute it to the people via a code, the person has to enter.
 
-[mocked demo](https://appencoder3264.github.io/angular-quiz)
-Default admin account is admin/admin.
+[mocked demo is https://appencoder3264.github.io/angular-quiz](https://appencoder3264.github.io/angular-quiz).
+Default admin account is `admin/admin`.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9, material design and redux (ngrx).
 
